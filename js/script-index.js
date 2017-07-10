@@ -4,7 +4,7 @@ $(document).ready( function(){
 	renderHighlightedRecipes(recipesArray);
 	$(".js-back").remove();//Me parecio más conveniente que el evento .hide()
 	
-		 $(".title-callout").next().text("NUEVAS RECETAS");
+	$(".title-callout").next().text("NUEVAS RECETAS");
 	
 	
 });
@@ -16,6 +16,11 @@ $(document).ready( function(){
 */
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+	recipesArray.forEach(function(recetas){
+		if(recetas.highlighted==true){
+			renderRecipe(recetas);
+		}
+	});
 }
 
 /*
