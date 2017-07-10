@@ -2,8 +2,11 @@ $(document).ready( function(){
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
-	$(".js-back").hide();
-
+	$(".js-back").remove();//Me parecio más conveniente que el evento .hide()
+	
+		 $(".title-callout").next().text("NUEVAS RECETAS");
+	
+	
 });
 
 
