@@ -1,5 +1,18 @@
 $(document).ready(function(){
 	$(".js-menu").remove();
 	console.log("success");
-	
+	$(".js-show-recipe").click(function(){
+		$(".page").removeClass('make');
+		})
+	$(".js-show-make").click(function(){
+		$(".page").addClass('make');
+		})
+	$(".icon-arrow-left-alt").click(function(){
+		$('<ul>').append(
+			$('<li>').append(
+				$('<a>',{
+				'href':'#list-title',
+				'text':'Ingredients'
+				}))).slideToggle();
+	});
 });
