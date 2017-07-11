@@ -49,7 +49,7 @@ $(document).ready( function(){
 		})
 	}
 	function renderActivity(recipe) {
-		if(recipe.length=1){ //>0 no me funciona
+		if(recipe.length!=0){ //>0 no me funciona
 			$(".wrapper-message").hide();
 		}
 	}
