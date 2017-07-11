@@ -20,10 +20,9 @@ $(document).ready( function(){
 		}
 	});
  	}
-
-	function renderRecipe(recipe) {
+ 	function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
-	$(".list-recipes").append('<a class="item-recipe" href="#"></a>');
+	$(".list-recipes").append('<a class="item-recipe" href="#"><span class="attribution"></span></a>');
 	$(".item-recipe").append('<span class="attribution"></span>');
 	$(".attribution").append('<span class="title-recipe">'+recipe.title+' </span>');
 	$(".attribution").append('<span class="metadata-recipe"></span>')
@@ -31,9 +30,29 @@ $(document).ready( function(){
 	$(".metadata-recipe").append('<span class="bookmarks-recipe"></span>');
 	$(".bookmarks-recipe").append('<span class="icon-bookmark"></span>');
 	/*$(".item-recipe").append('<img src='++'/>');*/
-	
 	}
+	/*function renderRecipe(recipe) {
+	console.log('Voy a pintar la receta: ', recipe);
+	$(".list-recipes").append('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">'+recipe.title+' </span><span class="metadata-recipe"><span class="author-recipe">'+recipe.name+'</span><span class="bookmarks-recipe"><span class="icon-bookmark"></span></span></span></span></a>');
+	*/
+	$(".mostrar").click(function() {
+		$(".list-recipes").css('overflow','visible');
+	});
 	
+	
+	
+	renderActivities(activities);
+	function renderActivities(activitiesArray) {
+		console.log('Activities: ', activitiesArray);
+		activitiesArray.forEach(function (obj){
+			renderActivity(obj);
+		})
+	}
+	function renderActivity(recipe) {
+		if(recipe.length=1){ //>0 no me funciona
+			$(".wrapper-message").hide();
+		}
+	}
 });
 
 
@@ -59,17 +78,13 @@ $(document).ready( function(){
 /*
 * Función que se encarga de pintar todas las actividades
 */
-function renderActivities(activitiesArray) {
-	console.log('Activities: ', activitiesArray);
-}
+
 
 /*
 * Función que se encarga de pintar una actividad
 * Aqui se tiene que crear el HTML que esta en el 
 * archivo "templates/templates-activity.html"
 */
-function renderActivity(recipe) {
-	
-}
+
 
 
