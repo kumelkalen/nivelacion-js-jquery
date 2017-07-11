@@ -3,9 +3,11 @@ $(document).ready(function(){
 	console.log("success");
 	$(".js-show-recipe").click(function(){
 		$(".page").removeClass('make');
+		$(".js-show-recipe").addClass('active');
 		})
 	$(".js-show-make").click(function(){
 		$(".page").addClass('make');
+		$(".js-show-make").removeClass('active');
 		})
 	$(".icon-arrow-left-alt").click(function(){
 		$('<ul>').append(
